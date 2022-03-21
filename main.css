@@ -1,0 +1,103 @@
+@import url('./features.css');
+
+body{
+    background-color:black;
+}
+.container{
+    display: grid;
+    width:100%;
+    grid-template-columns: 400px repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap:3px;
+    grid-template-areas:
+    "hd hd hd hd hd hd hd"
+    "sd sd main main main main main"
+    "ft ft ft ft ft ft ft";
+}
+
+.box{
+    border:2px solid black;
+    background:white;
+    }
+
+    .header{
+        grid-area:hd;
+        height: 300px;
+        background-color: antiquewhite;
+        background-image: url("../images/Headerpic.jpg");
+        background-position: center;
+    }
+
+    .footer{
+        grid-area:ft;
+        background-color:black;
+
+    }
+   
+    .content{
+        grid-area:main;
+        background-color: black;
+        border: 2px solid black;
+    }
+
+
+    .side{
+        grid-area:sd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: black;
+    }
+
+   
+
+    /* Anything smaller than first breakpoint 600px */
+    @media(max-width:600px){
+.container {
+    display: grid;
+        grid-template-columns: 400px repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-gap:3px;
+        grid-template-areas:
+        'hd hd'
+        'sd sd'
+        'main main'
+        'ft ft';
+    }
+    .header{
+        width: 100%;
+    }
+}
+  
+  /* Medium Screens */
+  @media (min-width: 601px) and (max-width:1300px) {
+    .container {
+        display: grid;
+        grid-template-columns: 400px repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-gap:3px;
+        grid-template-areas:
+        'hd hd hd hd'
+        'sd sd'
+        'main main main main'
+        'ft ft ft ft';
+      
+    }
+  }
+  
+  /* Large Screens */
+  @media (min-width:1300px) {
+    .container {
+        display: grid;
+        width:100%;
+        grid-template-columns: 400px repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-gap:3px;
+        grid-template-areas:
+        'hd hd hd hd hd hd hd'
+        'sd sd main main main main main'
+        'ft ft ft ft ft ft ft';
+    }
+
+    }
